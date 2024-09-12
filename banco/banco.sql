@@ -1,0 +1,16 @@
+CREATE DATABASE IFSP;
+
+USE IFSP;
+
+CREATE TABLE Cidade (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    estado CHAR(2)
+);
+
+CREATE TABLE Cliente (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    cidade_id INT,
+    FOREIGN KEY (cidade_id) REFERENCES Cidade(id)
+);
